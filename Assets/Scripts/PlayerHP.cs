@@ -8,6 +8,7 @@ public class PlayerHP : MonoBehaviour
     private float maxHP = 10;
     private float currentHP;
     private SpriteRenderer spriteRenderer;
+    private PlayerController playerController;
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -16,6 +17,7 @@ public class PlayerHP : MonoBehaviour
     {
         currentHP = maxHP;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerController = GetComponent<PlayerController>();
     }
 
     public void TakeDamage(float damage)
@@ -28,6 +30,8 @@ public class PlayerHP : MonoBehaviour
         if ( currentHP <= 0)
         {
             Debug.Log("Player HP : 0.. Die");
+            // 체력이 0이면 OnDie() 함수를 호출해서 죽었을 때 처리를 한다
+            playerController.OnDie();
         }
     }
 

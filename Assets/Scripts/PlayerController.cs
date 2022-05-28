@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private string      nextSceneName;
+    
     [SerializeField]
     private StageData   stageData;
     private Movement2D  movement2D;
@@ -52,4 +56,14 @@ public class PlayerController : MonoBehaviour
                                          Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
     }
     // Mathf.Clamp(value, min, max): value가 min보다 작으면 min 반환, max보다 크면 max 반환
+
+    public void OnDie()
+    {
+        // 디바이스에 획득한 점수 score 저장
+        PlayerPrefs.SetInt("Score", score);
+        
+        // 플레이어 사망 시  nextSceneName 씬으로 이동
+        SceneManager.LoadScene(nextSceneName);
+
+    }
 }
