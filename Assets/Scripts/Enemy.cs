@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     private int damage = 1; //적 공격력
     [SerializeField]
     private int scorePoint = 100; //적 처치 시 획득 점수
+    [SerializeField]
+    private GameObject explosionPrefab; // 폭발 효과
     private PlayerController playerController; //플레이어의 점수에 접근하기 위해
 
     private void Awake()
@@ -28,7 +30,11 @@ public class Enemy : MonoBehaviour
 
     public void Ondie()
     {
+        //플레이어의 점수를 scorePoint만큼 증가시킨다
         playerController.Score += scorePoint;
+        //폭발 이펙트 생성
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        //적 오브젝트 삭제
         Destroy(gameObject);
 
     }

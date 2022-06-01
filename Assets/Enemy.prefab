@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7222492871103303368}
   - component: {fileID: 4174327375827227276}
   - component: {fileID: 2466797216077366209}
+  - component: {fileID: -7314739917293852186}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   scorePoint: 100
+  explosionPrefab: {fileID: 1053356458986608046, guid: 4c6671bbf99c24985919fe2b1dcd9d0b, type: 3}
 --- !u!114 &2466797216077366209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +147,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 55d88bd2f793e425e8ae0baf481f5013, type: 2}
+--- !u!95 &-7314739917293852186
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773085023010552971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f544bca8f38f4d149cda350163c23dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
